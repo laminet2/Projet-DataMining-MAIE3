@@ -18,33 +18,33 @@
      <!-- Main Input For Receiving Query to our ML -->
     <form action="{{ url_for('predict')}}"method="post">
     
-    <select name="Medications" id="">
+    <select name="Medications" id="" required>
       <option value="0">SNRI</option>
       <option value="1">SSRI</option>
       <option value="2">Benzodiazepine</option>
       <option value="3">None</option>
     </select>
-    <select name="Previous Diagnoses" id="">
+    <select name="PreviousDiagnoses" id="" required>
       <option value="0">MDD</option>
       <option value="1">PTSD</option>
       <option value="2">GAD</option>
       <option value="3">Panic Disorder</option>
       <option value="4">None</option>
     </select>
-    <select name="Anxiety Diagnosis" id="">
+    <select name="AnxietyDiagnosis" id="" required>
       <option value="0">Yes</option>
       <option value="1">No</option>
     </select>
     
-    <select name="Obsession Type" id="#ObsessionType">
-      <option value="">Harm-related</option>
+    <select name="ObsessionType" id="#ObsessionType" required>
+      <option value="0">Harm-related</option>
       <option value="1">Contamination</option>
       <option value="2">Symmetry </option>
       <option value="3">Hoarding</option>
       <option value="4">Religious</option>
     </select>
 
-    <select name="Education Level" id="">
+    <select name="EducLevel" id="" required>
           <option value="0">Some College</option>
           <option value="1">College Degree</option>
           <option value="2">High School</option>
