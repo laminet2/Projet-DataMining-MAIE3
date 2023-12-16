@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>simulation Patient Atteint de depression </title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+  
+</head>
+
+<body>
+ <div class="login">
+	<h1>Simulation Patient Atteint de depression </h1>
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    
+    <select name="Medications" id="">
+      <option value="0">SNRI</option>
+      <option value="1">SSRI</option>
+      <option value="2">Benzodiazepine</option>
+      <option value="3">None</option>
+    </select>
+    <select name="Previous Diagnoses" id="">
+      <option value="0">MDD</option>
+      <option value="1">PTSD</option>
+      <option value="2">GAD</option>
+      <option value="3">Panic Disorder</option>
+      <option value="4">None</option>
+    </select>
+    <select name="Anxiety Diagnosis" id="">
+      <option value="0">Yes</option>
+      <option value="1">No</option>
+    </select>
+    
+    <select name="Obsession Type" id="#ObsessionType">
+      <option value="">Harm-related</option>
+      <option value="1">Contamination</option>
+      <option value="2">Symmetry </option>
+      <option value="3">Hoarding</option>
+      <option value="4">Religious</option>
+    </select>
+
+    <select name="Education Level" id="">
+          <option value="0">Some College</option>
+          <option value="1">College Degree</option>
+          <option value="2">High School</option>
+          <option value="3">Graduate Degree</option>
+    </select>
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
